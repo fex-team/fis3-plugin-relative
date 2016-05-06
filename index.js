@@ -21,6 +21,7 @@ function getRelativeUrl(file, host) {
   }
 
   var relativeFrom = typeof host.relative === 'string' ? host.relative : host.release;
+  relativeFrom = relativeFrom.replace(/^\//g, '');
   if (rFile.test(relativeFrom)) {
     relativeFrom = path.dirname(relativeFrom);
   }
